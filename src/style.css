@@ -1,0 +1,247 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    height: 100vh;
+    background-color: black;
+    background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)), url("/src/restaurantBackgroundImg.jpeg");
+    background-size:cover;
+    color: white;
+    font-family: 'Heebo', sans-serif;
+}
+/* Body's darker background. */
+.darker-background{
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("/src/restaurantBackgroundImg.jpeg");
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+/* Main Container */
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Content */
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.darker-background #content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.darker-background .header{
+    background-color: rgba(0,0,0,.1);
+    backdrop-filter: blur(4px);
+}
+
+
+/* Header */
+.header{
+    padding: 1rem;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right-links > ul{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+.right-links > ul > li{
+    padding: .25rem .8rem;
+}
+.right-links > ul > li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.header-heading{
+    min-width: 117px;
+}
+/* Current-site Indicator */
+.current-site{
+    background-color: transparent;
+    border: 1px solid aliceblue;
+}
+
+.header-heading, .home-title{
+    font-family: 'Playfair Display', serif;
+}
+
+/* Home site */
+.home-container{
+    padding-left: 2rem;
+}
+.home-container > *{
+    margin: .5rem 0;
+}
+.home-title{
+    font-size: 6rem;
+}
+.home-tagline{
+    font-style: italic;
+    font-size: 1.2rem;
+}
+.menu-btn{
+    color: white;
+    text-transform: uppercase;
+    /* width: 200px; */
+    padding: .8rem 4rem;
+    background-color: transparent;
+    border: 1px solid #cdc8c2;
+}
+.menu-btn:hover{
+    color: black;
+    background-color: aliceblue;
+}
+
+/* Menu */
+.food-container , .wine-container{
+    display: flex;
+    flex-direction: column;
+    align-self:stretch;
+}
+
+/* Food Container */
+
+.food-header, .wine-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 4rem;
+}
+.food-header{
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.2)), url("/src/food.jpg");
+    background-size: cover;
+    background-position: center top;
+}
+.wine-header{
+    background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.2)), url("/src/wine.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.food-item-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    gap: 2rem;
+}
+.menu-header{
+    height: 250px;
+    opacity: .85;
+}
+.menus-menu{
+    /* flex-grow: 1; */
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.menus-menu p{
+    margin: .5rem 0;
+}
+
+.food-item-container > div{
+    color: white;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.6px);
+    -webkit-backdrop-filter: blur(2.6px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+.food-item-container > div:hover{
+    transform: scale(1.01);
+}
+.food-item-container > div > p::before{
+    content: '-';
+}
+.menus-menu .foodItem , .menus-menu .wineItem {
+    padding: 1rem;
+}
+.menus-menu h2{
+    text-decoration: underline;
+    margin-bottom: .5rem;
+}
+
+
+/* Contact */
+.contact-detail-container{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.contact-detail-container > div{
+    margin: 1rem 0;
+}
+.contact-detail-container  h2{
+    text-decoration: underline;
+}
+.contact-detail-container a{
+    color:white
+}
+.contact-detail-container , .aboutus-container{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.6px);
+    -webkit-backdrop-filter: blur(2.6px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+/* About */
+.aboutus-container{
+    width: min(1000px,90%);
+    padding: 1rem;
+
+}
+.aboutus-heading{
+    font-family: 'Playfair Display', serif;
+    margin: 1rem 0;
+}
+.aboutus-container p{
+    text-align: justify;
+}
+
+
+/* Media Queries */
+@media only screen and (max-width:800px) {
+    .right-links > ul{
+        gap:0px
+    }
+
+}
+
+@media only screen and (max-width:450px) {
+    .menu{
+        display: none;
+    }
+    .menus-menu{
+        padding: .5rem;
+    }
+}
+
+/* footer section */
+.author{
+    width: 100%;
+    background-color: #081419;
+}
+.author{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4%;
+}
+.author > a{
+    text-decoration: none;
+    color:white;
+    margin-left: .5%;
+ }
